@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <h2>Edit Project</h2>
+</div>
+
+<tr>
+  <td>
+    <label>New Project Title:</label>
+    <input [(ngModel)]="selectedProject.title">
+  </td>
+  
+  <td>
+    <label>New Project Manager:</label>
+    <input [(ngModel)]="selectedProject.agent">
+  </td>
+
+  <td>
+    <label>New Project Description:</label>
+    <input [(ngModel)]="selectedProject.description">
+  </td>
+
+  <td>
+    <label>New Project Money Needed:</label>
+    <input [(ngModel)]="selectedProject.money">
+  </td>
+</tr>
+<button (click)="beginUpdatingProject(selectedProject)">Update</button>
+<button (click)="beginDeletingProject(selectedProject)">Delete</button>
