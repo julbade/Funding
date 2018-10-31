@@ -1,7 +1,7 @@
-<div class="jumbotron">
-  <h2>Edit Project</h2>
-</div>
 
+  <h2>Edit Project</h2>
+
+<table>
 <tr>
   <td>
     <label>New Project Title:</label>
@@ -23,5 +23,6 @@
     <input [(ngModel)]="selectedProject.money">
   </td>
 </tr>
+</table>
 <button (click)="beginUpdatingProject(selectedProject)">Update</button>
 <button (click)="beginDeletingProject(selectedProject)">Delete</button>

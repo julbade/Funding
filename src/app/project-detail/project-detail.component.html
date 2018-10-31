@@ -1,15 +1,7 @@
 <div>
-  <tr>
-    <th>Title</th>
-    <th>Manager</th>
-    <th>Description</th>
-    <th>Money Needed</th>
-  </tr>
-<!--  -->
-  <tr>
-    <td>{{(fundingToDisplay | async)? .title}</td>
-    <td>{{(fundingToDisplay | async)? .agent}</td>
-    <td>{{(fundingToDisplay | async)? .description}</td>
-    <td>{{(fundingToDisplay | async)? .money}</td>
-  </tr>
+      <h2>{{(projectToDisplay | async)?.title}}</h2>
+      <h3>{{(projectToDisplay | async)?.agent}}</h3>
+      <h4>{{(projectToDisplay | async)?.description}}</h4>
+      <p>{{(projectToDisplay | async)?.money}}</p>
+  
 </div>

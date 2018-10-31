@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
 
+
 @Component({
   selector: 'app-edit-project',
   templateUrl: './edit-project.component.html',

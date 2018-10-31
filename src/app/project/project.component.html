@@ -1,30 +1,19 @@
 <h2>Projects</h2>
 
-
-
 <div *ngFor="let project of projects | async">
-  <tr>
-    <th>Title</th>
-    <th>Manager</th>
-    <th>Description</th>
-    <th>Money Needed</th>
-  </tr>
-  <tr>
-    <td (click)="goToDetailPage(project)"><em>{{project.title}}</em></td>
-    <td><em>{{project.agent}}</em></td>
-    <td><em>{{project.description}}</em></td>
-    <td><em>{{project.money}}</em></td>
-  </tr>
+  <table> 
+    <tr>
+      <th>Title</th>
+      <th>Manager</th>
+      <th>Description</th>
+      <th>Money Needed</th>
+    </tr>
+    <tr>
+      <td (click)="goToDetailPage(project)"><em>{{project.title}}</em></td>
+      <td><em>{{project.agent}}</em></td>
+      <td><em>{{project.description}}</em></td>
+      <td><em>{{project.money}}</em></td>
+    </tr>
+  </table>
 </div>
-
-
-
-
-
-
-  <div *ngIf="currentRoute === '/admin'">
-    {{project.description}}</div>
-    <hr>
-    <app-edit-project [selectedProject]="project"></app-edit-project>
-
- 
+    
