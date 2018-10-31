@@ -1,34 +1,67 @@
-
-    <div class="jumbotron">Add New Project</div>
-    <div>     
+<br>
+  <div class="jumbotron"><h1>Add New Project</h1></div>
+<div *ngIf="startAddingProject">
+  <div>
     <label>Title:</label>
-          <br>
-          <input #newTitle>
-        </div>
-  
-        <div>
-          <label>Manager:</label>
-          <br>
-          <input #newAgent>
-        </div>
-  
-        <div>
-          <label>Description:</label>
-          <br>
-          <textarea #newDescription></textarea>
-        </div>
-        <div>
-            <label>Money Needed:</label>
-            <br>
-            <input #newMoney>
-        </div>
-        <button class="btn btn-success" (click)="submitForm(newTitle.value, newAgent.value, newDescription.value, newMoney.value); newTitle.value=''; newAgent.value=''; newMoney.value=''">Add</button>
-    
-        <div *ngIf="currentRoute === '/admin'">
-          {{project.description}}</div>
-          <hr>
-          <app-edit-project [selectedProject]="project"></app-edit-project>
+    <br>
+    <input #newTitle>
+  </div>
+
+  <div>
+    <label>Manager:</label>
+    <br>
+    <input #newAgent>
+  </div>
+
+  <div>
+    <label>Description:</label>
+    <br>
+    <textarea #newDescription></textarea>
+  </div>
+  <div>
+    <label>Money Needed:</label>
+    <br>
+    <input #newMoney>
+  </div>
+  <button class="btn btn-success" (click)="submitProject(newTitle.value, newAgent.value, newDescription.value, newMoney.value); newTitle.value=''; newAgent.value=''; newMoney.value=''">Add</button>
+</div>
+<div *ngIf="currentRoute === '/admin'">
+  {{project.description}}</div>
+<hr>
+<app-edit-project [selectedProject]="project"></app-edit-project>
+
+<!--  -->
+<br>
+<div class="jumbotron"><h1> New Charity</h1></div>
+<div *ngIf="startAddingCharity">
+  <div>
+    <label>Title:</label>
+    <br>
+    <input #newTitle>
+  </div>
+
+  <div>
+    <label>Manager:</label>
+    <br>
+    <input #newAgent>
+  </div>
+
+  <div>
+    <label>Description:</label>
+    <br>
+    <textarea #newDescription></textarea>
+  </div>
+  <div>
+    <label>Money Needed:</label>
+    <br>
+    <input #newMoney>
+  </div>
+  <button class="btn btn-success" (click)="submitCharity(newTitle.value, newAgent.value, newDescription.value, newMoney.value); newTitle.value=''; newAgent.value=''; newMoney.value=''">Add</button>
+</div>
+<div *ngIf="currentRoute === '/admin'">
+  {{project.description}}</div>
+<hr>
+<app-edit-charity [selectedCharity]="charity"></app-edit-charity>
 
 
-    <app-project></app-project>
-  
+<app-project></app-project>

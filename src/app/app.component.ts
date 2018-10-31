@@ -13,4 +13,7 @@ export class AppComponent {
   constructor(db: AngularFireDatabase) {
     this.projects = db.list('project');
     }
+
+    // selectedProject = null;
+    // selectedCharity = null;
   }
