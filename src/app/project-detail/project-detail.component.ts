@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Project } from '../project.model';
-import { ProjectService } from '../project.service';
+import { ProjectService } from '../projnchar.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({

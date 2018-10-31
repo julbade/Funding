@@ -1,3 +1,19 @@
-<p>
-  charity works!
-</p>
+<h2>Charity</h2>
+
+<div *ngFor="let charity of charitys | async">
+  <table> 
+    <tr>
+      <th>Title</th>
+      <th>Manager</th>
+      <th>Description</th>
+      <th>Money Needed</th>
+    </tr>
+    <tr>
+      <td (click)="goToDetailPage(charitys)"><em>{{project.title}}</em></td>
+      <td><em>{{charity.agent}}</em></td>
+      <td><em>{{charity.description}}</em></td>
+      <td><em>{{charity.money}}</em></td>
+    </tr>
+  </table>
+</div>
+    

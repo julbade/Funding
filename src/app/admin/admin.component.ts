@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../project.model';
-import { ProjectService } from '../project.service';
-
+import { ProjectService } from '../projnchar.service';
+import { Charity} from '../charity.model';
 
 @Component({
   selector: 'app-admin',
@@ -16,9 +16,15 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
   }
-  submitForm(title: string, agent: string, description: string, money: number) {
+  submitProject(title: string, agent: string, description: string, money: number) {
     var newProject: Project = new Project(title, agent, description, money);
     this.projectService.addProject(newProject);
+
+  }
+
+  submitCharity(title: string, agent: string, description: string, money: number) {
+    var newCharity: Charity = new Charity(title, agent, description, money);
+    this.projectService.addProject(newCharity);
 
   }
 }

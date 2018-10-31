@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Project } from './project.model';
-
+import { Charity } from './charity.model';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 
 @Injectable()
 export class ProjectService {
   projects: FirebaseListObservable<any[]>;
-
+  charities: FirebaseListObservable<any[]>;
   constructor(private database: AngularFireDatabase) {
     this.projects = database.list('Projects');
+    this.charities = database.list('Charities');
 
   }
 
@@ -36,4 +37,31 @@ export class ProjectService {
     var projectEntryInFirebase = this.getProjectById(localProjectToDelete.$key);
     projectEntryInFirebase.remove();
   }
+
+// 
+
+  getCharity() {
+    return this.charities;
+  }
+
+  addCharity(newCharity: Charity) {
+    this.charities.push(newCharity);
+  }
+
+  getCharityById(charityId: string) {
+    return this.database.object('Charities/' + charityId);
+  }
+  updateCharity(localUpdatedCharity) {
+    var charityEntryInFirebase = this.getCharityById(localUpdatedCharity.$key);
+    charityEntryInFirebase.update({
+      title: localUpdatedCharity.title,
+      agent: localUpdatedCharity.agent,
+      description: localUpdatedCharity.description,
+      money: localUpdatedCharity.money
+    });
+  }
+  deleteCharity(localCharityToDelete) {
+    var charityEntryInFirebase = this.getCharityById(localCharityToDelete.$key);
+    charityEntryInFirebase.remove();
+  } 
 }

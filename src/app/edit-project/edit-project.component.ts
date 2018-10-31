@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ProjectService } from '../project.service';
+import { ProjectService } from '../projnchar.service';
 
 
 @Component({
@@ -8,11 +8,11 @@ import { ProjectService } from '../project.service';
   styleUrls: ['./edit-project.component.css']
 })
 
-
 export class EditProjectComponent implements OnInit {
   @Input() selectedProject;
 
   constructor(private projectService: ProjectService) { }
+
 
   ngOnInit() {
   }

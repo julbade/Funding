@@ -1,3 +1,28 @@
-<p>
-  edit-charity works!
-</p>
+
+  <h2>Edit Charity</h2>
+
+  <table>
+  <tr>
+    <td>
+      <label>New Project Title:</label>
+      <input [(ngModel)]="selectedCharity.title">
+    </td>
+    
+    <td>
+      <label>New Charity Manager:</label>
+      <input [(ngModel)]="selectedCharity.agent">
+    </td>
+  
+    <td>
+      <label>New Charity Description:</label>
+      <input [(ngModel)]="selectedCharity.description">
+    </td>
+  
+    <td>
+      <label>New Charity Money Needed:</label>
+      <input [(ngModel)]="selectedCharity.money">
+    </td>
+  </tr>
+  </table>
+  <button (click)="beginUpdatingCharity(selectedCharity)">Update</button>
+  <button (click)="beginDeletingCharity(selectedCharity)">Delete</button>
